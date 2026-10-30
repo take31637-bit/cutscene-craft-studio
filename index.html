@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10111b">
+<title>Cutscene Craft Studio</title>
+<style>
+:root{--bg:#0b0c14;--panel:#141624;--panel2:#191c2d;--line:#292d43;--text:#f2f3fa;--muted:#969bb4;--purple:#9b7cff;--cyan:#5dd6d0;--pink:#ff79b7;--green:#67d6a1;--red:#ff7885;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#292044 0,transparent 38%),var(--bg);color:var(--text);font-family:Tahoma,"Segoe UI",sans-serif;font-size:14px;line-height:1.7}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:11px;padding:9px 14px}button:hover{border-color:var(--purple)}button.primary{background:linear-gradient(135deg,#8866ef,#6547c6);border:0;color:white;font-weight:700}button.danger{color:#ff9aa3}input,select,textarea{width:100%;background:#0f1120;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--purple)}label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}.sidebar{border-left:1px solid var(--line);padding:24px 16px;background:#10121eeF;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:11px;padding:4px 8px 25px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#b08cff,#5e49c9);display:grid;place-items:center;font-size:20px;font-weight:bold;box-shadow:0 8px 30px #8767ec44}.brand strong{display:block;font-size:15px}.brand small{color:var(--muted);font-size:10px;letter-spacing:1px;direction:ltr;display:block;text-align:right}.navtitle{font-size:10px;color:#737994;padding:12px 12px 5px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;text-align:right;color:#aeb2c8;padding:11px 13px}.nav button.active{background:#29233f;color:#d8caff;border-right:3px solid var(--purple)}.side-note{position:absolute;bottom:20px;right:16px;left:16px;background:#171a2a;border:1px solid var(--line);border-radius:14px;padding:13px;color:var(--muted);font-size:11px}.main{padding:26px 30px;max-width:1500px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:11px}.top h1{font-size:24px;margin:2px 0}.top p{margin:0;color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.page{display:none}.page.active{display:block}.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}.card{background:linear-gradient(145deg,#171a2a,#121421);border:1px solid var(--line);border-radius:var(--radius);padding:17px;min-width:0}.stathead{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.staticon{width:32px;height:32px;border-radius:10px;background:#292341;display:grid;place-items:center;color:#c5b4ff}.statnum{font-size:25px;font-weight:700;margin:12px 0 2px;direction:ltr;text-align:right}.statfoot{color:var(--muted);font-size:11px}.two{grid-template-columns:1.45fr 1fr}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}.sectionhead h2{font-size:15px;margin:0}.sectionhead span{font-size:11px;color:var(--muted)}.chartwrap{height:220px;position:relative}.chartwrap canvas{width:100%;height:100%}.insights{display:grid;gap:10px}.insight{padding:11px;border-radius:12px;background:#101321;border:1px solid var(--line);font-size:12px}.insight b{display:block;color:#d7caff;margin-bottom:3px}.insight p{margin:0;color:var(--muted)}.quick{grid-template-columns:repeat(3,1fr);margin-top:15px}.quick button{width:100%;text-align:right;padding:15px;background:#171a2a}.quick strong{display:block}.quick small{color:var(--muted)}.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.toolbar input{max-width:290px}.toolbar select{max-width:180px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:right;padding:12px;border-bottom:1px solid var(--line);font-size:12px}th{color:var(--muted);font-weight:500;background:#111321}tr:last-child td{border:0}.pill{display:inline-block;border-radius:20px;padding:2px 9px;font-size:10px;background:#28233f;color:#d5c8ff}.muted{color:var(--muted)}.empty{text-align:center;padding:35px;color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.formgrid .full{grid-column:1/-1}.formactions{display:flex;gap:8px;margin-top:14px}.hint{color:var(--muted);font-size:11px}.progress{height:7px;background:#292d43;border-radius:10px;overflow:hidden;margin:8px 0}.progress i{height:100%;display:block;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:10px}.goalgrid{grid-template-columns:repeat(3,1fr)}.goalnum{font-size:22px;font-weight:bold}.tag{font-size:10px;color:var(--cyan)}.modal{position:fixed;inset:0;background:#050610bb;display:none;align-items:center;justify-content:center;padding:15px;z-index:5}.modal.open{display:flex}.modalbox{background:#171a2a;border:1px solid var(--line);border-radius:18px;padding:20px;width:min(650px,100%);max-height:90vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modalhead h2{margin:0;font-size:17px}.toast{position:fixed;bottom:20px;left:20px;background:#24283b;border:1px solid var(--line);padding:10px 15px;border-radius:12px;display:none;z-index:8}.toast.show{display:block}.footer{color:#747a95;font-size:10px;margin-top:25px;text-align:center}
+@media(max-width:950px){.app{grid-template-columns:1fr}.sidebar{height:auto;position:relative;padding:12px 14px;border-left:0;border-bottom:1px solid var(--line)}.brand{padding:2px 5px 10px}.side-note{display:none}.nav{display:flex;overflow:auto}.navtitle{display:none}.nav button{white-space:nowrap;padding:8px 12px}.main{padding:20px 15px}.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+@media(max-width:560px){.top{align-items:flex-start;flex-direction:column}.top h1{font-size:20px}.stats{gap:9px}.card{padding:13px}.statnum{font-size:21px}.quick,.goalgrid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">▶</div><div><strong>Cutscene Craft</strong><small>CREATOR STUDIO</small></div></div>
+ <div class="navtitle">مدیریت کانال</div>
+ <nav class="nav">
+  <button class="active" data-page="dashboard">◈ داشبورد رشد</button>
+  <button data-page="videos">▣ ویدیوها و اپیزودها</button>
+  <button data-page="analysis">⌁ تحلیل عملکرد</button>
+  <button data-page="ideas">✦ ایده‌های محتوا</button>
+  <button data-page="goals">◎ اهداف رشد</button>
+ </nav>
+ <div class="side-note">اطلاعات این نسخه روی همین مرورگر ذخیره می‌شود. برای جلوگیری از ازدست‌رفتن اطلاعات، مرتباً پشتیبان بگیر.</div>
+</aside>
+<main class="main">
+ <header class="top">
+  <div><div class="eyebrow">CREATOR GROWTH WORKSPACE</div><h1 id="pageTitle">داشبورد رشد کانال</h1><p>مرکز مدیریت و تصمیم‌گیری برای رشد Cutscene Craft TV</p></div>
+  <div class="actions"><button id="exportBtn">↓ خروجی پشتیبان</button><button id="importBtn">↑ بازیابی</button><button class="primary" id="addVideoTop">＋ ثبت ویدیوی جدید</button><input type="file" id="importFile" accept=".json,application/json" hidden></div>
+ </header>
+ <section class="page active" id="dashboard">
+  <div class="grid stats">
+   <div class="card"><div class="stathead"><span>مجموع بازدید ثبت‌شده</span><span class="staticon">◉</span></div><div class="statnum" id="totalViews">۰</div><div class="statfoot">مجموع بازدید ویدیوهای ثبت‌شده</div></div>
+   <div class="card"><div class="stathead"><span>میانگین CTR</span><span class="staticon">％</span></div><div class="statnum" id="avgCtr">۰٪</div><div class="statfoot">نرخ کلیک نمایش بندانگشتی</div></div>
+   <div class="card"><div class="stathead"><span>میانگین زمان تماشا</span><span class="staticon">◷</span></div><div class="statnum" id="avgAvd">۰:۰۰</div><div class="statfoot">میانگین ثبت‌شده برای هر ویدیو</div></div>
+   <div class="card"><div class="stathead"><span>تعداد ویدیوها</span><span class="staticon">▣</span></div><div class="statnum" id="videoCount">۰</div><div class="statfoot">اپیزودهای ثبت‌شده در استودیو</div></div>
+  </div>
+  <div class="grid two">
+   <div class="card"><div class="sectionhead"><h2>روند بازدید ویدیوها</h2><span>بر اساس اطلاعات ثبت‌شده</span></div><div class="chartwrap"><canvas id="viewsChart"></canvas></div></div>
+   <div class="card"><div class="sectionhead"><h2>پیشنهادهای رشد</h2><span>راهنمای تصمیم بعدی</span></div><div class="insights" id="insights"></div></div>
+  </div>
+  <div class="grid quick">
+   <button onclick="openVideoModal()"><strong>＋ ثبت عملکرد اپیزود</strong><small>بازدید، ایمپرشن، CTR و زمان تماشا</small></button>
+   <button onclick="showPage('ideas')"><strong>✦ ثبت ایده جدید</strong><small>ایده بازی یا موضوع ویدیو را ذخیره کن</small></button>
+   <button onclick="showPage('goals')"><strong>◎ تنظیم هدف رشد</strong><small>هدف بازدید، انتشار و سابسکرایبر</small></button>
+  </div>
+  <div class="card" style="margin-top:15px"><div class="sectionhead"><h2>آخرین ویدیوهای ثبت‌شده</h2><button onclick="showPage('videos')">مشاهده همه</button></div><div id="recentVideos"></div></div>
+ </section>
+ <section class="page" id="videos">
+  <div class="card"><div class="sectionhead"><h2>کتابخانه ویدیوها</h2><button class="primary" onclick="openVideoModal()">＋ افزودن ویدیو</button></div>
+   <div class="toolbar"><input id="videoSearch" placeholder="جست‌وجوی نام بازی یا اپیزود..."><select id="gameFilter"><option value="">همه بازی‌ها</option></select><select id="sortVideos"><option value="new">جدیدترین ثبت</option><option value="views">بیشترین بازدید</option><option value="ctr">بالاترین CTR</option></select></div>
+   <div id="videoTable"></div>
+  </div>
+ </section>
+ <section class="page" id="analysis">
+  <div class="grid two">
+   <div class="card"><div class="sectionhead"><h2>مقایسه CTR و بازدید</h2><span>ویدیوهای ثبت‌شده</span></div><div id="analysisTable"></div></div>
+   <div class="card"><div class="sectionhead"><h2>چطور از داده‌ها استفاده کنی؟</h2></div><div class="insights">
+    <div class="insight"><b>CTR پایین، ایمپرشن بالا</b><p>موضوع به مخاطب نمایش داده شده اما بسته‌بندی ویدیو (عنوان و Thumbnail) شاید به‌اندازه کافی جذاب نبوده است.</p></div>
+    <div class="insight"><b>CTR خوب، زمان تماشای پایین</b><p>وعده عنوان و تصویر را با شروع و ریتم ویدیو هماهنگ‌تر کن.</p></div>
+    <div class="insight"><b>بازدید و زمان تماشای خوب</b><p>ساختار روایت، بازی یا سبک تدوین این ویدیو را برای اپیزود بعدی بررسی کن.</p></div>
+    <p class="hint">این‌ها سرنخ هستند، نه تشخیص قطعی الگوریتم. برای نتیجه بهتر، داده‌ها را در بازه زمانی یکسان از YouTube Studio وارد کن.</p>
+   </div></div>
+  </div>
+ </section>
+ <section class="page" id="ideas">
+  <div class="card"><div class="sectionhead"><h2>بانک ایده‌های محتوا</h2><button class="primary" id="addIdea">＋ ایده جدید</button></div><div id="ideasList"></div></div>
+ </section>
+ <section class="page" id="goals">
+  <div class="grid goalgrid">
+   <div class="card"><div class="tag">هدف ماهانه بازدید</div><div class="goalnum" id="goalViewsText">۱۰٬۰۰۰</div><div class="progress"><i id="goalViewsBar" style="width:0%"></i></div><div class="hint" id="goalViewsHint">۰٪ از هدف</div></div>
+   <div class="card"><div class="tag">هدف انتشار ماهانه</div><div class="goalnum" id="goalUploadsText">۴ ویدیو</div><div class="progress"><i id="goalUploadsBar" style="width:0%"></i></div><div class="hint" id="goalUploadsHint">۰٪ از هدف</div></div>
+   <div class="card"><div class="tag">هدف CTR</div><div class="goalnum" id="goalCtrText">۶٪</div><div class="progress"><i id="goalCtrBar" style="width:0%"></i></div><div class="hint" id="goalCtrHint">۰٪ از هدف</div></div>
+  </div>
+  <div class="card" style="margin-top:15px"><div class="sectionhead"><h2>تنظیم هدف‌ها</h2><span>مقادیر قابل تغییر</span></div><div class="formgrid">
+   <div><label>هدف بازدید ماهانه</label><input id="goalViews" type="number" min="1" value="10000"></div>
+   <div><label>هدف تعداد انتشار در ماه</label><input id="goalUploads" type="number" min="1" value="4"></div>
+   <div><label>هدف CTR (درصد)</label><input id="goalCtr" type="number" min="0.1" step=".1" value="6"></div>
+  </div><div class="formactions"><button class="primary" id="saveGoals">ذخیره هدف‌ها</button></div></div>
+ </section>
+ <div class="footer">Cutscene Craft Studio · نسخه 1.0 · ذخیره‌سازی محلی در مرورگر</div>
+</main>
+</div>
+<div class="modal" id="videoModal"><div class="modalbox">
+ <div class="modalhead"><h2 id="videoModalTitle">ثبت ویدیوی جدید</h2><button onclick="closeModal('videoModal')">✕</button></div>
+ <form id="videoForm"><input type="hidden" id="editId">
+  <div class="formgrid">
+   <div><label>نام بازی *</label><input id="vGame" required placeholder="مثلاً Resident Evil"></div>
+   <div><label>شماره اپیزود</label><input id="vEpisode" placeholder="مثلاً 01"></div>
+   <div class="full"><label>عنوان ویدیو</label><input id="vTitle" placeholder="عنوان انگلیسی ویدیو"></div>
+   <div><label>تاریخ انتشار</label><input id="vDate" type="date"></div>
+   <div><label>لینک ویدیو (اختیاری)</label><input id="vUrl" type="url" placeholder="https://youtube.com/..."></div>
+   <div><label>بازدید</label><input id="vViews" type="number" min="0" value="0"></div>
+   <div><label>ایمپرشن</label><input id="vImpressions" type="number" min="0" value="0"></div>
+   <div><label>CTR (درصد)</label><input id="vCtr" type="number" min="0" max="100" step=".01" value="0"></div>
+   <div><label>میانگین زمان تماشا (دقیقه)</label><input id="vAvd" type="number" min="0" step=".1" value="0" placeholder="مثلاً 2.3"></div>
+   <div><label>سابسکرایبر جذب‌شده</label><input id="vSubs" type="number" min="0" value="0"></div>
+   <div><label>وضعیت</label><select id="vStatus"><option>منتشرشده</option><option>در حال تدوین</option><option>برنامه‌ریزی‌شده</option></select></div>
+   <div class="full"><label>یادداشت / نکته برای اپیزود بعد</label><textarea id="vNotes" rows="2" placeholder="مثلاً شروع ویدیو قوی‌تر باشد..."></textarea></div>
+  </div><div class="formactions"><button class="primary" type="submit">ذخیره ویدیو</button><button type="button" onclick="closeModal('videoModal')">انصراف</button></div>
+ </form>
+</div></div>
+<div class="modal" id="ideaModal"><div class="modalbox">
+ <div class="modalhead"><h2>ثبت ایده محتوا</h2><button onclick="closeModal('ideaModal')">✕</button></div>
+ <form id="ideaForm"><div class="formgrid"><div><label>نام بازی / موضوع</label><input id="ideaName" required></div><div><label>اولویت</label><select id="ideaPriority"><option>زیاد</option><option>متوسط</option><option>کم</option></select></div><div class="full"><label>توضیحات ایده</label><textarea id="ideaDesc" rows="3"></textarea></div></div><div class="formactions"><button class="primary">ذخیره ایده</button></div></form>
+</div></div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='ccstudio_v1';
+let state={videos:[],ideas:[],goals:{views:10000,uploads:4,ctr:6}};
+const $=id=>document.getElementById(id);
+const fa=n=>Number(n||0).toLocaleString('fa-IR');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x)state={...state,...x,goals:{...state.goals,...x.goals}}}catch(e){}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));render();toast('اطلاعات ذخیره شد')}
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)}
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===p));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===p));$('pageTitle').textContent=({dashboard:'داشبورد رشد کانال',videos:'ویدیوها و اپیزودها',analysis:'تحلیل عملکرد',ideas:'بانک ایده‌های محتوا',goals:'اهداف رشد'})[p];render()}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+function fmtTime(m){if(!m)return'۰:۰۰';let s=Math.round(m*60);return `${Math.floor(s/60).toLocaleString('fa-IR')}:${String(s%60).padStart(2,'0').toLocaleString('fa-IR')}`}
+function render(){
+ const vs=state.videos, published=vs.filter(v=>v.status==='منتشرشده'), total=vs.reduce((a,v)=>a+Number(v.views||0),0);
+ const ctrs=published.filter(v=>Number(v.impressions)>0),avgCtr=ctrs.length?ctrs.reduce((a,v)=>a+Number(v.ctr||0),0)/ctrs.length:0;
+ const avds=published.filter(v=>Number(v.avd)>0),avgAvd=avds.length?avds.reduce((a,v)=>a+Number(v.avd),0)/avds.length:0;
+ $('totalViews').textContent=fa(total);$('avgCtr').textContent=fa(avgCtr.toFixed(1))+'٪';$('avgAvd').textContent=fmtTime(avgAvd);$('videoCount').textContent=fa(vs.length);
+ $('recentVideos').innerHTML=tableHTML([...vs].sort((a,b)=>(b.created||0)-(a.created||0)).slice(0,5),false);
+ const games=[...new Set(vs.map(v=>v.game))];$('gameFilter').innerHTML='<option value="">همه بازی‌ها</option>'+games.map(g=>`<option>${esc(g)}</option>`).join('');
+ renderVideoTable();renderIdeas();renderGoals(total,published.length,avgCtr);drawChart(vs);makeInsights(vs,total,avgCtr,avgAvd);
+ $('analysisTable').innerHTML=vs.length?`<div class="tablewrap"><table><thead><tr><th>ویدیو</th><th>بازدید</th><th>CTR</th><th>زمان تماشا</th></tr></thead><tbody>${[...vs].sort((a,b)=>b.views-a.views).map(v=>`<tr><td>${esc(v.game)} ${v.episode?'· '+esc(v.episode):''}</td><td>${fa(v.views)}</td><td>${fa(v.ctr)}٪</td><td>${fmtTime(v.avd)}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">برای تحلیل، ابتدا آمار چند ویدیو را ثبت کن.</div>';
+}
+function tableHTML(list,actions=true){if(!list.length)return'<div class="empty">هنوز ویدیویی ثبت نشده است. اولین اپیزودت را اضافه کن.</div>';return `<div class="tablewrap"><table><thead><tr><th>بازی / اپیزود</th><th>تاریخ</th><th>بازدید</th><th>CTR</th><th>میانگین تماشا</th><th>وضعیت</th>${actions?'<th>عملیات</th>':''}</tr></thead><tbody>${list.map(v=>`<tr><td><b>${esc(v.game)}</b><div class="muted">${esc(v.title||'')} ${v.episode?'· قسمت '+esc(v.episode):''}</div></td><td>${esc(v.date||'—')}</td><td>${fa(v.views)}</td><td>${fa(v.ctr)}٪</td><td>${fmtTime(v.avd)}</td><td><span class="pill">${esc(v.status)}</span></td>${actions?`<td><button onclick="editVideo('${v.id}')">ویرایش</button> <button class="danger" onclick="deleteVideo('${v.id}')">حذف</button></td>`:''}</tr>`).join('')}</tbody></table></div>`}
+function renderVideoTable(){let list=[...state.videos],q=$('videoSearch').value.toLowerCase(),g=$('gameFilter').value,sort=$('sortVideos').value;list=list.filter(v=>(!q||(v.game+' '+v.title+' '+v.episode).toLowerCase().includes(q))&&(!g||v.game===g));list.sort(sort==='views'?(a,b)=>b.views-a.views:sort==='ctr'?(a,b)=>b.ctr-a.ctr:(a,b)=>(b.created||0)-(a.created||0));$('videoTable').innerHTML=tableHTML(list,true)}
+['videoSearch','gameFilter','sortVideos'].forEach(id=>$(id).addEventListener(id==='videoSearch'?'input':'change',renderVideoTable));
+function openVideoModal(v=null){$('videoForm').reset();$('editId').value=v?.id||'';$('videoModalTitle').textContent=v?'ویرایش ویدیو':'ثبت ویدیوی جدید';if(v){$('vGame').value=v.game;$('vEpisode').value=v.episode||'';$('vTitle').value=v.title||'';$('vDate').value=v.date||'';$('vUrl').value=v.url||'';$('vViews').value=v.views;$('vImpressions').value=v.impressions;$('vCtr').value=v.ctr;$('vAvd').value=v.avd;$('vSubs').value=v.subs;$('vStatus').value=v.status;$('vNotes').value=v.notes||''}$('videoModal').classList.add('open')}
+function closeModal(id){$(id).classList.remove('open')}
+window.openVideoModal=openVideoModal;window.closeModal=closeModal;
+$('addVideoTop').onclick=()=>openVideoModal();
+$('videoForm').onsubmit=e=>{e.preventDefault();let id=$('editId').value;let v={id:id||String(Date.now()),game:$('vGame').value.trim(),episode:$('vEpisode').value.trim(),title:$('vTitle').value.trim(),date:$('vDate').value,url:$('vUrl').value.trim(),views:+$('vViews').value,impressions:+$('vImpressions').value,ctr:+$('vCtr').value,avd:+$('vAvd').value,subs:+$('vSubs').value,status:$('vStatus').value,notes:$('vNotes').value,created:Date.now()};let i=state.videos.findIndex(x=>x.id===id);if(i>=0){v.created=state.videos[i].created;state.videos[i]=v}else state.videos.push(v);closeModal('videoModal');save()};
+window.editVideo=id=>{let v=state.videos.find(x=>x.id===id);if(v)openVideoModal(v)};
+window.deleteVideo=id=>{if(confirm('این ویدیو حذف شود؟')){state.videos=state.videos.filter(x=>x.id!==id);save()}};
+function renderIdeas(){$('ideasList').innerHTML=state.ideas.length?state.ideas.map(i=>`<div class="insight" style="margin-bottom:9px;display:flex;justify-content:space-between;gap:12px"><div><b>${esc(i.name)} <span class="pill">${esc(i.priority)}</span></b><p>${esc(i.desc||'بدون توضیحات')}</p></div><button class="danger" onclick="deleteIdea('${i.id}')">حذف</button></div>`).join(''):'<div class="empty">ایده‌ای ثبت نشده است. بازی‌ها یا سوژه‌های احتمالی را اینجا نگه دار.</div>'}
+$('addIdea').onclick=()=>$('ideaModal').classList.add('open');
+$('ideaForm').onsubmit=e=>{e.preventDefault();state.ideas.unshift({id:String(Date.now()),name:$('ideaName').value,priority:$('ideaPriority').value,desc:$('ideaDesc').value});closeModal('ideaModal');$('ideaForm').reset();save()};
+window.deleteIdea=id=>{state.ideas=state.ideas.filter(x=>x.id!==id);save()};
+function renderGoals(views,count,ctr){let g=state.goals;let month=new Date().toISOString().slice(0,7),monthVideos=state.videos.filter(v=>v.date?.slice(0,7)===month&&v.status==='منتشرشده');let mv=monthVideos.reduce((a,v)=>a+v.views,0);let vals=[Math.min(100,mv/g.views*100),Math.min(100,monthVideos.length/g.uploads*100),Math.min(100,ctr/g.ctr*100)];let nums=[mv,monthVideos.length,ctr];['Views','Uploads','Ctr'].forEach((k,i)=>{$('goal'+k+'Text').textContent=i===0?fa(g.views):i===1?fa(g.uploads)+' ویدیو':fa(g.ctr)+'٪';$('goal'+k+'Bar').style.width=vals[i]+'%';$('goal'+k+'Hint').textContent=fa(nums[i])+' · '+fa(Math.round(vals[i]))+'٪ از هدف'});$('goalViews').value=g.views;$('goalUploads').value=g.uploads;$('goalCtr').value=g.ctr}
+$('saveGoals').onclick=()=>{state.goals={views:Math.max(1,+$('goalViews').value),uploads:Math.max(1,+$('goalUploads').value),ctr:Math.max(.1,+$('goalCtr').value)};save()};
+function makeInsights(vs,total,ctr,avd){let a=[];if(!vs.length)a.push(['از یک اپیزود شروع کن','آمار آخرین ویدیوت را از YouTube Studio وارد کن تا پیشنهادها بر اساس داده واقعی شکل بگیرند.']);else{let best=[...vs].sort((x,y)=>y.views-x.views)[0];a.push(['الگوی ویدیوی پربازدید','«'+best.game+(best.episode?' · قسمت '+best.episode:'')+'» بیشترین بازدید ثبت‌شده را دارد. بررسی کن چه چیزی در موضوع، شروع و بسته‌بندی آن متفاوت بوده است.']);if(ctr>0&&ctr<4)a.push(['آزمایش عنوان و Thumbnail','میانگین CTR ثبت‌شده کمتر از ۴٪ است. چند نسخه متفاوت از عنوان و تصویر را آزمایش کن؛ ایمپرشن و بازه زمانی مقایسه را یکسان نگه دار.']);else if(ctr>=6)a.push(['CTR امیدوارکننده','میانگین CTR ثبت‌شده خوب است. حالا بررسی کن آیا زمان تماشا هم با انتظار مخاطب هماهنگ است.']);if(avd>0&&avd<3)a.push(['شروع ویدیو را بازبینی کن','میانگین زمان تماشا کمتر از ۳ دقیقه است. شروع سریع‌تر، حذف مکث‌های طولانی و ورود زودتر به اتفاق اصلی را امتحان کن.']);a.push(['قدم بعدی','برای ویدیوی بعدی فقط یک تغییر اصلی انتخاب کن و نتیجه‌اش را با اپیزود قبلی مقایسه کن.']);} $('insights').innerHTML=a.map(x=>`<div class="insight"><b>${esc(x[0])}</b><p>${esc(x[1])}</p></div>`).join('')}
+function drawChart(vs){let c=$('viewsChart'),ctx=c.getContext('2d'),w=c.clientWidth,h=c.clientHeight,dpr=window.devicePixelRatio||1;c.width=w*dpr;c.height=h*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);let data=[...vs].sort((a,b)=>(a.date||'').localeCompare(b.date||'')).slice(-8);if(!data.length){ctx.fillStyle='#969bb4';ctx.textAlign='center';ctx.font='12px Tahoma';ctx.fillText('پس از ثبت آمار ویدیوها، نمودار اینجا نمایش داده می‌شود',w/2,h/2);return}let max=Math.max(1,...data.map(v=>v.views)),left=38,bottom=30,top=12,usableW=w-left-10,usableH=h-top-bottom;ctx.strokeStyle='#292d43';ctx.lineWidth=1;for(let j=0;j<4;j++){let y=top+usableH*j/3;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(w-8,y);ctx.stroke()}let pts=data.map((v,i)=>({x:left+(data.length===1?usableW/2:i*usableW/(data.length-1)),y:top+usableH-(v.views/max)*usableH,v}));ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle='#a88aff';ctx.lineWidth=3;ctx.stroke();pts.forEach((p,i)=>{ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fillStyle='#5dd6d0';ctx.fill();ctx.fillStyle='#969bb4';ctx.font='10px Tahoma';ctx.textAlign='center';ctx.fillText((p.v.game||'').slice(0,9),p.x,h-8)});}
+$('exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({...state,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'}),a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download='Cutscene-Craft-Backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('فایل پشتیبان آماده شد')};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let x=JSON.parse(await f.text());if(!Array.isArray(x.videos)||!Array.isArray(x.ideas))throw Error();if(confirm('اطلاعات فعلی با اطلاعات فایل پشتیبان جایگزین شود؟')){state={videos:x.videos,ideas:x.ideas,goals:{...state.goals,...x.goals}};save();toast('بازیابی انجام شد')}}catch(err){alert('فایل پشتیبان معتبر نیست.')}e.target.value=''};
+load();render();window.addEventListener('resize',()=>drawChart(state.videos));
+</script>
+</body></html>
